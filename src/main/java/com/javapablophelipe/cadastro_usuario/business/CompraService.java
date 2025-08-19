@@ -43,6 +43,29 @@ public class CompraService {
 
         return compraRepository.save(compra);
     }
+    public List<Compra> listarCompras() {
+        return compraRepository.findAll();
+    }
+    public Compra atualizarCompra(Long id, CompraRequestDTO dto) {
+        Compra compra = compraRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Compra não encontrada"));
 
+        Usuario usuario = usuarioRepository.findById(dto.getUsuarioId())
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
+        List<Padaria> produtos = padariaRepository.findAllById(dto.getProdutosIds());
+
+        compra.setUsuario(usuario);
+        compra.setProdutos(produtos);
+        compra.setValorTotal(calcularValorTotal(produtos));
+        compra.setDataCompra(LocalDateTime.now());
+
+        return compraRepository.save(compra);
+    }
+    public void deletarCompra(Long id) {
+        if (!compraRepository.existsById(id)) {
+            throw new RuntimeException("Compra não encontrada");
+        }
+        compraRepository.deleteById(id);
+    }
 }

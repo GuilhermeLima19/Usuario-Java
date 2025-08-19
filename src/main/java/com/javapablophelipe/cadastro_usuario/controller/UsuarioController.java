@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/usuario")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*") // ou o domínio específico do front-end
 
 public class UsuarioController {
 
@@ -38,5 +39,6 @@ public class UsuarioController {
         usuarioService.atualizarUsuarioporCpf(cpf, usuario);
         return ResponseEntity.ok().build();
     }
+
 }
 
