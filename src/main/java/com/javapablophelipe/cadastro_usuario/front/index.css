@@ -1,0 +1,144 @@
+/* Fundo da página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(IMG/ChatGPT\ Image\ 18\ de\ ago.\ de\ 2025\,\ 20_00_50.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container central */
+.container {
+    background: rgba(255, 255, 255, 0.15); /* efeito vidro */
+    backdrop-filter: blur(12px); /* vidro fosco */
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Estilo da tabela */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Cabeçalho */
+th {
+    background: rgba(0,123,255,0.8);
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+/* Células */
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+}
+
+/* Efeito de hover */
+tr:hover {
+    background: rgba(0, 123, 255, 0.2);
+}
+
+/* Conteúdo por cima do fundo */
+.conteudo {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Título com sombra */
+h2, h3 {
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    color: #fff;
+}
+
+/* Botões */
+button, .btn {
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(90deg, #007BFF, #00C6FF);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0,123,255,0.5);
+}
+
+button:hover, .btn:hover {
+    background: linear-gradient(90deg, #0056b3, #0099cc);
+    transform: scale(1.05);
+}
+
+/* Carrinho flutuante */
+#carrinhoFlutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 50px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, #007BFF, #00C6FF);
+    color: white;
+}
+
+/* Navbar com vidro */
+.navbar {
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Menu lateral (offcanvas) sofisticado */
+.offcanvas {
+    background: rgba(20,20,20,0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+/* Links do menu */
+.offcanvas a {
+    color: #f5f5f5;
+    font-weight: 500;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.offcanvas a:hover {
+    color: #ffd700;
+    background: rgba(255,255,255,0.1);
+    transform: translateX(6px);
+}

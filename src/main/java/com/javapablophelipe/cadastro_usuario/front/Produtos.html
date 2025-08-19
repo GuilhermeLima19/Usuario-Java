@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padaria Oxalá</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url(IMG/ChatGPT\ Image\ 18\ de\ ago.\ de\ 2025\,\ 20_00_50.png);
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar escondida que aparece ao passar o mouse */
+    .navbar {
+      position: fixed;
+      top: -60px;
+      left: 0;
+      width: 100%;
+      transition: top 0.3s;
+      z-index: 1000;
+    }
+
+    .navbar:hover {
+      top: 0;
+    }
+
+    /* Container dos produtos */
+    .produtos {
+      margin-top: 100px;
+    }
+
+    .card {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Carrinho no topo direito */
+    #carrinho {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+      max-width: 250px;
+      display: none;
+      z-index: 1100;
+    }
+
+    #carrinho h5 {
+      margin-bottom: 10px;
+    }
+
+    #carrinho ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar escondida -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">🥖 Padaria Oxalá</span>
+    </div>
+  </nav>
+
+  <div id="carrinho" class="p-3 bg-white rounded shadow-sm">
+    <h5>Carrinho 🛒</h5>
+    <ul id="listaCarrinho" class="list-unstyled"></ul>
+    <p><strong>Total: R$ <span id="totalCarrinho">0,00</span></strong></p>
+    
+    <!-- Botão de Finalizar -->
+    <button 
+      onclick="window.location.href='finalizar.html'" 
+      class="btn btn-success w-100 mt-2">
+      Finalizar Compra
+    </button>
+  </div>
+  
+
+  <!-- Produtos -->
+  <div class="container produtos">
+    <div class="row g-4">
+
+      <!-- Produto 1 -->
+      <div class="col-md-3">
+        <div class="card">
+          <img src="IMG/receita-de-pao-frances.jpg" class="card-img-top" alt="Pão Francês">
+          <div class="card-body text-center">
+            <h5 class="card-title">Pão Francês</h5>
+            <p class="card-text">R$ 0,50 (unidade)</p>
+            <button class="btn btn-warning" onclick="adicionarCarrinho('Pão Francês', 0.50)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 2 -->
+      <div class="col-md-3">
+        <div class="card">
+          <img src="IMG/pastel-de-queijo-scaled.jpg" class="card-img-top" alt="Pão de Queijo">
+          <div class="card-body text-center">
+            <h5 class="card-title">Pão de Queijo</h5>
+            <p class="card-text">R$ 1,00 (unidade)</p>
+            <button class="btn btn-warning" onclick="adicionarCarrinho('Pão de Queijo', 1.00)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 3 -->
+      <div class="col-md-3">
+        <div class="card">
+          <img src="IMG/Bolo de chocolate.jpg" class="card-img-top" alt="Bolo de Chocolate">
+          <div class="card-body text-center">
+            <h5 class="card-title">Bolo de Chocolate</h5>
+            <p class="card-text">R$ 15,00 (inteiro)</p>
+            <button class="btn btn-warning" onclick="adicionarCarrinho('Bolo de Chocolate', 15.00)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 4 -->
+      <div class="col-md-3">
+        <div class="card">
+          <img src="IMG/sonho.jpg" class="card-img-top" alt="Sonho">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sonho</h5>
+            <p class="card-text">R$ 5,00 (unidade)</p>
+            <button class="btn btn-warning" onclick="adicionarCarrinho('Sonho', 5.00)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 5 -->
+      <div class="col-md-3">
+        <div class="card">
+          <img src="IMG/croissant.jpg" class="card-img-top" alt="Croissant">
+          <div class="card-body text-center">
+            <h5 class="card-title">Croissant</h5>
+            <p class="card-text">R$ 6,00 (unidade)</p>
+            <button class="btn btn-warning" onclick="adicionarCarrinho('Croissant', 6.00)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 6 -->
+      <div class="col-md-3">
+        <div class="card">
+          <img src="IMG/Baguete-1.jpg" class="card-img-top" alt="Baguete">
+          <div class="card-body text-center">
+            <h5 class="card-title">Baguete</h5>
+            <p class="card-text">R$ 7,00 (unidade)</p>
+            <button class="btn btn-warning" onclick="adicionarCarrinho('Baguete', 7.00)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 7 -->
+      <div class="col-md-3">
+        <div class="card">
+          <img src="IMG/torta de morango.jpg" class="card-img-top" alt="Torta de Morango">
+          <div class="card-body text-center">
+            <h5 class="card-title">Torta de Morango</h5>
+            <p class="card-text">R$ 20,00 (inteira)</p>
+            <button class="btn btn-warning" onclick="adicionarCarrinho('Torta de Morango', 20.00)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produto 8 -->
+      <div class="col-md-3">
+        <div class="card">
+          <img src="IMG/coxinha.jpg" class="card-img-top" alt="Coxinha">
+          <div class="card-body text-center">
+            <h5 class="card-title">Coxinha</h5>
+            <p class="card-text">R$ 12,00 (inteiro)</p>
+            <button class="btn btn-warning" onclick="adicionarCarrinho('Coxinha', 12.00)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    let carrinho = [];
+    let total = 0;
+
+    function adicionarCarrinho(produto, preco) {
+      carrinho.push({produto, preco});
+      total += preco;
+
+      document.getElementById("carrinho").style.display = "block";
+
+      let lista = document.getElementById("listaCarrinho"); // corrigido
+      lista.innerHTML = "";
+      carrinho.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = item.produto + " - R$ " + item.preco.toFixed(2);
+        lista.appendChild(li);
+      });
+
+      document.getElementById("totalCarrinho").textContent = total.toFixed(2); // corrigido
+    }
+  </script>
+
+</body>
+</html>
