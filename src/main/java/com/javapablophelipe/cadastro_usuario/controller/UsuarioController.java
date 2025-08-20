@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/usuario")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*") // ou o domínio específico do front-end
+@CrossOrigin(origins = "http://localhost:63342") // ou o domínio específico do front-end
 
 public class UsuarioController {
 
